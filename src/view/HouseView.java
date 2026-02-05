@@ -121,7 +121,17 @@ public class HouseView {
     }
 
     public void findHouse() {
+        Scanner scanner = new Scanner(System.in);
         // 查找房屋信息
+        System.out.println("----------------查找房屋----------------");
+        System.out.print("请输入要查找的id:");
+        int id = scanner.nextInt();
+        House house = houseService.findById(id);
+        if(house != null) {
+            System.out.println(house);
+        } else {
+            System.out.println("无信息");
+        }
     }
 
     public void listHouse() {
