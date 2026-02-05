@@ -93,7 +93,20 @@ public class HouseView {
     }
 
     public void delHouse() {
+        Scanner scanner = new Scanner(System.in);
         // 删除房屋信息
+        System.out.println("-----------------删除房屋--------------------");
+        System.out.println("请选择待删除房屋编号（-1退出）：");
+        int id = scanner.nextInt();
+        if (id == -1) {
+            System.out.println("退出删除房屋项目");
+            return;
+        }
+        if (houseService.delById(id)) {
+            System.out.println("-----------------删除完成--------------------");
+        } else {
+            System.out.println("-----------------删除失败--------------------");
+        }
     }
 
     public void addHouse() {
