@@ -104,6 +104,11 @@ public class HouseView {
 
     public void listHouse() {
         // 调用HouseService中的list方法返回所有房屋信息
+        House[] houses = houseService.list();
+        System.out.println("房屋编号\t\t姓名\t\t\t\t手机号\t\t地址\t\t\t\t房租\t\t\t状态");
+        for (House house : houses) {
+            System.out.println(house);
+        }
 
     }
 

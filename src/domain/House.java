@@ -23,14 +23,12 @@ public class House {
 
     @Override
     public String toString() {
-        return "House{" +
-                "id=" + id +
+        return "id=" + id +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 ", rent=" + rent +
-                ", state='" + state + '\'' +
-                '}';
+                ", state='" + state;
     }
 
     public int getId() {

@@ -21,4 +21,8 @@ public class HouseService {
         newHouse.setId(++idCounter);
         return true;
     }
+
+    public House[] list() {
+        return houses;
+    }
 }
