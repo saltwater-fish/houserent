@@ -67,7 +67,29 @@ public class HouseView {
     }
 
     public void updateHouse() {
+        Scanner scanner = new Scanner(System.in);
         // 修改房屋信息
+        System.out.println("-----------------修改房屋-----------------");
+        System.out.println("请选择你要修改的房屋编号（-1退出）：");
+        int id = scanner.nextInt();
+        if (id == -1) {
+            System.out.println("退出修改房屋选项");
+            return;
+        }
+        // 根据选择的id查找House对象并返回
+        House house = houseService.findById(id);
+        System.out.print("姓名（" + house.getName() + "）:");
+        house.setName(scanner.next());
+        System.out.print("电话（" + house.getPhone() + "）:");
+        house.setPhone(scanner.next());
+        System.out.println("地址（" + house.getAddress() + "）：");
+        house.setAddress(scanner.next());
+        System.out.print("租金（" + house.getRent() + "）：");
+        house.setRent(scanner.nextInt());
+        System.out.print("状态（" + house.getState() + "）：");
+        house.setState(scanner.next());
+
+        System.out.println("-----------------修改完成-----------------");
     }
 
     public void delHouse() {

@@ -25,4 +25,13 @@ public class HouseService {
     public House[] list() {
         return houses;
     }
+
+    public House findById(int id) {
+        for (House house : houses) {
+            if (id == house.getId()) {
+                return house;
+            }
+        }
+        return null;
+    }
 }
